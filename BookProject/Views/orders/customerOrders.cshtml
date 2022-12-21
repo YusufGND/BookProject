@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BookProject.Models.orders>
+
+@{
+    ViewData["Title"] = "customerOrders";
+}
+
+    <style>
+        .table {
+            box-shadow: 2px 2px 2px 2px #ccc;
+            background: #f8f8f8
+        }
+    </style>
+<h1 style="font-family:KacstBook">Customer Orders</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table style="font-family:KacstBook" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.bookId)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr style="font-family:KacstBook">
+            <td>
+                @Html.DisplayFor(modelItem => item.bookId)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderdate)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

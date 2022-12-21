@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BookProject.Models.report>
+
+@{
+    ViewData["Title"] = "customerreport";
+}
+    <style>
+        .table {
+            box-shadow: 2px 2px 2px 2px #ccc;
+            background: #f8f8f8
+
+        }
+    </style>
+<h1 style="font-family:KacstBook">Customer Report</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table style="font-family:KacstBook" class="table">
+    <thead>
+        <tr>
+            <th>
+                Customer Name
+                @*@Html.DisplayNameFor(model => model.customername)*@
+            </th>
+           
+            <th>
+                Total
+                @*@Html.DisplayNameFor(model => model.total)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr style="font-family:KacstBook">
+            <td>
+                @Html.DisplayFor(modelItem => item.customername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+            <td>
+                <a asp-action="customerOrders" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
