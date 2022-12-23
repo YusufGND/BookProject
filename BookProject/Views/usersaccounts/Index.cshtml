@@ -30,7 +30,7 @@
             text-decoration: none;
             transition: box-shadow .15s,transform .15s;
             user-select: none;
-            -webkit-user-select: none;
+            -webkit-user-select: none;"
             touch-action: manipulation;
             white-space: nowrap;
             will-change: box-shadow,transform;
@@ -62,18 +62,22 @@
 </p>
 <table class="table">
     <thead>
-        <tr style="font-family:KacstBook">
+        <tr style="font-family: KacstBook; color: white; background: #f14f4d">
             <th>
-                @Html.DisplayNameFor(model => model.name)
+                Name
+                @*@Html.DisplayNameFor(model => model.name)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.pass)
+                Password
+                @*@Html.DisplayNameFor(model => model.pass)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.role)
+                Role
+                @*@Html.DisplayNameFor(model => model.role)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.email)
+                Email
+                @*@Html.DisplayNameFor(model => model.email)*@
             </th>
             <th></th>
         </tr>
@@ -94,9 +98,9 @@
                 @Html.DisplayFor(modelItem => item.email)
             </td>
             <td>
-                <a  asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a  asp-action="Edit" asp-route-id="@item.Id"><i class="fa-regular fa-pen-to-square">Edit</i></a> |
                 @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" style="color: red">Delete</a>
             </td>
         </tr>
 }
