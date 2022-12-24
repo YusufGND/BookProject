@@ -26,9 +26,10 @@
 	font-family: Raleway, sans-serif;
 }
 
-body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);
-}
+        body {
+            /*background: linear-gradient(90deg, #C7C5F4, #776BCC);*/
+            background: linear-gradient(90deg, #c35b5b, #ad4444,#9d2a2a);
+        }
 
 .container {
 	display: flex;
@@ -37,13 +38,14 @@ body {
 	min-height: 100vh;
 }
 
-.screen {
-	background: linear-gradient(90deg, #5D54A4, #7C78B8);
-	position: relative;
-	height: 600px;
-	width: 360px;
-	box-shadow: 0px 0px 24px #5C5696;
-}
+        .screen {
+            /*background: linear-gradient(90deg, #5D54A4, #7C78B8);*/
+            background: linear-gradient(90deg, #ad4444, #c35b5b); /* #c47f7f , #9d2a2a*/
+            position: relative;
+            height: 600px;
+            width: 360px;
+            box-shadow: 0px 0px 24px #3f0000;
+        }
 
 .screen__content {
 	z-index: 1;
@@ -76,28 +78,30 @@ body {
 	border-radius: 0 72px 0 0;
 }
 
-.screen__background__shape2 {
-	height: 220px;
-	width: 220px;
-	background: #6C63AC;
-	top: -172px;
-	right: 0;
-	border-radius: 32px;
-}
+        .screen__background__shape2 {
+            height: 220px;
+            width: 220px;
+            /*background: #6C63AC;*/
+            background: #9d2a2a;
+			top: -172px;
+            right: 0;
+            border-radius: 32px;
+        }
 
-.screen__background__shape3 {
-	height: 540px;
-	width: 190px;
-	background: linear-gradient(270deg, #5D54A4, #6A679E);
-	top: -24px;
-	right: 0;
-	border-radius: 32px;
-}
+        .screen__background__shape3 {
+            height: 540px;
+            width: 190px;
+            /*background: linear-gradient(270deg, #5D54A4, #6A679E);*/
+            background: linear-gradient(270deg, #9d2a2a, #9d2a2a);
+            top: -24px;
+            right: 0;
+            border-radius: 32px;
+        }
 
 .screen__background__shape4 {
 	height: 400px;
 	width: 200px;
-	background: #7E7BB9;
+	background: #9d2a2a;
 	top: 420px;
 	right: 50px;
 	border-radius: 60px;
@@ -114,11 +118,11 @@ body {
 	position: relative;
 }
 
-.login__icon {
-	position: absolute;
-	top: 30px;
-	color: #7875B5;
-}
+        .login__icon {
+            position: absolute;
+            top: 30px;
+            color: #b57575;
+        }
 
 .login__input {
 	border: none;
@@ -131,12 +135,12 @@ body {
 	transition: .2s;
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
-	outline: none;
-	border-bottom-color: #6A679E;
-}
+        .login__input:active,
+        .login__input:focus,
+        .login__input:hover {
+            outline: none;
+            border-bottom-color: #ac6363;
+        }
 
 .login__submit {
 	background: #fff;
@@ -144,24 +148,24 @@ body {
 	margin-top: 30px;
 	padding: 16px 20px;
 	border-radius: 26px;
-	border: 1px solid #D4D3E8;
+	border: 1px solid #e8d3d3;
 	text-transform: uppercase;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
 	width: 100%;
 	color: #4C489D;
-	box-shadow: 0px 2px 2px #5C5696;
+	box-shadow: 0px 2px 2px #3f0000;
 	cursor: pointer;
 	transition: .2s;
 }
 
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
-	border-color: #6A679E;
-	outline: none;
-}
+        .login__submit:active,
+        .login__submit:focus,
+        .login__submit:hover {
+            border-color: #9e6767;
+            outline: none;
+        }
 
 .button__icon {
 	font-size: 24px;
@@ -185,12 +189,12 @@ body {
 	justify-content: center;
 }
 
-.social-login__icon {
-	padding: 20px 10px;
-	color: #fff;
-	text-decoration: none;
-	text-shadow: 0px 0px 8px #7875B5;
-}
+        .social-login__icon {
+            padding: 20px 10px;
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 0px 0px 8px #b57576;
+        }
 
 .social-login__icon:hover {
 	transform: scale(1.5);
@@ -214,22 +218,22 @@ body {
     <h2 class="LoginBaslik"><b>Login</b></h2>
     <form asp-action="Login">
         <div class="form-group">
-            <label class="control-label"><b>user Name</b></label>
-            <input name="na" class="form-control" placeholder="userName*" />
+            <label class="control-label"><b>User Name</b></label>
+            <input name="na" class="form-control" placeholder="User Name*" />
         </div>
         <div class="form-group">
-            <label for="pa" class="control-label"><b>user Password</b></label>
+            <label for="pa" class="control-label"><b>User Password</b></label>
             <input name="pa" type="password" class="form-control" placeholder="Password*" /> <br />
         </div>
-        <input type="submit" value="Login" class="btn btn-primary" />
+        <input type="submit" value="Login" class="btn btn-danger" />
 
         <p style="color:red"> @ViewData["message"]</p>
     </form>
 
 </div>
            <div class="social-login">
-                    <b><a style="color:white" asp-action="Create">Create Account</a></b>
-                    <h3>Sign Up</h3>
+                    <b><a style="color:white" asp-action="Create"><h3>Sign Up</h3></a></b>
+                    @*<h3>Sign Up</h3>*@
                        @*<div class="social-icons">
                         <a href="#" class="social-login__icon fab fa-instagram"></a>
                         <a href="#" class="social-login__icon fab fa-facebook"></a>
