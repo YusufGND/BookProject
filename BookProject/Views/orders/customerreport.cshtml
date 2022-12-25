@@ -6,15 +6,40 @@
     <style>
         .table {
             box-shadow: 2px 2px 2px 2px #ccc;
-            background: #f8f8f8
         }
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #f14f4d;
+                color: white;
+            }
     </style>
 <h1 style="font-family:KacstBook">Customer Report</h1>
 
 @*<p>
     <a asp-action="Create">Create New</a>
 </p>*@
-<table style="font-family:KacstBook" class="table">
+<table id="customers" style="font-family: KacstBook;" class="table">
     <thead>
         <tr>
             <th>
@@ -26,12 +51,14 @@
                 Total
                 @*@Html.DisplayNameFor(model => model.total)*@
             </th>
-            <th></th>
+            <th>
+                Details
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr style="font-family:KacstBook">
+        <tr style="font-family:KacstBook;">
             <td>
                 @Html.DisplayFor(modelItem => item.customername)
             </td>
@@ -39,7 +66,7 @@
                 @Html.DisplayFor(modelItem => item.total)
             </td>
             <td>
-                <a asp-action="customerOrders" asp-route-id="@item.Id">Details</a>
+                <a asp-action="customerOrders" asp-route-id="@item.Id"><img width="24px" c  src="~/images/info3.png"/></a>
             </td>
         </tr>
 }
