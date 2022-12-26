@@ -16,6 +16,9 @@
     {
         box-shadow:2px 2px 2px #ccc;
     }
+    .form-group {
+        margin-right: 5px;
+    }
 </style>
 <h1 style="font-family:KacstBook">Add Book</h1>
 
@@ -40,7 +43,7 @@
                 <span asp-validation-for="bookquantity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="price" class="control-label">Price</label>
+                <label style="float:left;" asp-for="price" class="control-label">Price</label>
                 <input V-model="donate" asp-for="price" class="form-control" />
                 <span asp-validation-for="price" class="text-danger"></span>
             </div>
@@ -70,7 +73,7 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
             <div class="form-group">
-                <input v-if="donate == 0" type="submit" value="Donation" class="btn btn-primary" />
+                <input v-if="donate == 0" type="submit" value="Donation" class="btn btn-success" />
             </div>
         </form>
     </div>
@@ -87,13 +90,7 @@
         }
     })
 </script>
-<style>
-    .form-group
-    {
-        float:left;
-        margin-right: 5px;
-    }
-</style>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
