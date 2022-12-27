@@ -7,28 +7,56 @@
     <style>
         .table {
             box-shadow: 2px 2px 2px 2px #ccc;
-            background: #f8f8f8
         }
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #f14f4d;
+                color: white;
+            }
     </style>
 <h1 style="font-family:KacstBook">Customer Orders</h1>
 
 @*<p>
     <a asp-action="Create">Create New</a>
 </p>*@
-<table style="font-family:KacstBook" class="table">
+<table id="customers" style="font-family:KacstBook" class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.bookId)
+                Book Id
+                @*@Html.DisplayNameFor(model => model.bookId)*@
             </th>
             
             <th>
-                @Html.DisplayNameFor(model => model.quantity)
+                Quantity
+                @*@Html.DisplayNameFor(model => model.quantity)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.orderdate)
+                Order Date
+                @*@Html.DisplayNameFor(model => model.orderdate)*@
             </th>
-            <th></th>
+            @*<th></th>*@
         </tr>
     </thead>
     <tbody>
